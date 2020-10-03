@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\
+C:\Users\Eric\Source\Repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\
 DatasetAnalizer
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\App.xaml
+C:\Users\Eric\Source\Repos\DatasetAnalizer\DatasetAnalizer\App.xaml
 7153726103
 
-25-1523095819
+251191707063
 1921654412462
 DialogSystem\OverlayHolder.xaml;DialogSystem\OverlayLayer.xaml;MainWindow.xaml;Themes\Generic.xaml;View\ChooseOperation.xaml;View\FormattingPreview.xaml;View\ImportDataset.xaml;
 
-True
+False
 

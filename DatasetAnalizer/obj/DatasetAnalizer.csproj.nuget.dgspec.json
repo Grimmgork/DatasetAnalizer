@@ -1,26 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Eric\\source\\repos\\DatasetAnalizer\\DatasetAnalizer\\DatasetAnalizer.csproj": {}
+    "C:\\Users\\Eric\\Source\\Repos\\DatasetAnalizer\\DatasetAnalizer\\DatasetAnalizer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Eric\\source\\repos\\DatasetAnalizer\\DatasetAnalizer\\DatasetAnalizer.csproj": {
+    "C:\\Users\\Eric\\Source\\Repos\\DatasetAnalizer\\DatasetAnalizer\\DatasetAnalizer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eric\\source\\repos\\DatasetAnalizer\\DatasetAnalizer\\DatasetAnalizer.csproj",
+        "projectUniqueName": "C:\\Users\\Eric\\Source\\Repos\\DatasetAnalizer\\DatasetAnalizer\\DatasetAnalizer.csproj",
         "projectName": "DatasetAnalizer",
-        "projectPath": "C:\\Users\\Eric\\source\\repos\\DatasetAnalizer\\DatasetAnalizer\\DatasetAnalizer.csproj",
+        "projectPath": "C:\\Users\\Eric\\Source\\Repos\\DatasetAnalizer\\DatasetAnalizer\\DatasetAnalizer.csproj",
         "packagesPath": "C:\\Users\\Eric\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eric\\source\\repos\\DatasetAnalizer\\DatasetAnalizer\\obj\\",
+        "outputPath": "C:\\Users\\Eric\\Source\\Repos\\DatasetAnalizer\\DatasetAnalizer\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Eric\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -62,6 +57,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -70,7 +71,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
