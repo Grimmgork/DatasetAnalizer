@@ -1,0 +1,75 @@
+﻿<Window x:Class="DatasetAnalizer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
+        xmlns:local="clr-namespace:DatasetAnalizer"
+        xmlns:vmdls ="clr-namespace:DatasetAnalizer.ViewModel"
+        xmlns:views ="clr-namespace:DatasetAnalizer.View"
+        xmlns:dialog ="clr-namespace:DatasetAnalizer.DialogSystem"
+        xmlns:controls ="clr-namespace:DatasetAnalizer.Controls"
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" MinHeight="700" MinWidth="1100" Background="{StaticResource BackgroundColor}" UseLayoutRounding="True" SnapsToDevicePixels="True" FontFamily="{StaticResource TextFont}" WindowStyle="None" RenderOptions.EdgeMode="Aliased" WindowState="Normal" SizeChanged="Window_SizeChanged">
+
+    <Window.Resources>
+        <vmdls:MainWindowViewModel x:Key="VM"/>
+
+        <DataTemplate DataType="{x:Type vmdls:ImportDataSetViewModel}">
+            <views:ImportDataset/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vmdls:ChooseOperationViewModel}">
+            <views:ChooseOperation/>
+        </DataTemplate>
+        
+    </Window.Resources>
+    
+    <WindowChrome.WindowChrome>
+        <WindowChrome x:Name="windowChrome" GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0" UseAeroCaptionButtons="False" ResizeBorderThickness="4" />
+    </WindowChrome.WindowChrome>
+
+    <Border x:Name="MainBorder" BorderBrush="{StaticResource PrimaryColor}" BorderThickness="0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32"/>
+                <RowDefinition/>
+                <RowDefinition Height="24"/>
+            </Grid.RowDefinitions>
+
+            <ContentPresenter Grid.Row="1" Content="{Binding MainContent, Source={StaticResource VM}}"/>
+
+            <Border Grid.Row="2" Background="{StaticResource ForegroundColor}">
+                <StatusBar Background="{StaticResource ForegroundColor}">
+                    <StatusBarItem>
+                        <TextBlock Text="Hello there!" VerticalAlignment="Center" FontSize="11" Margin="8,0,0,0" FontWeight="Medium"  Foreground="{StaticResource PrimaryColor}"/>
+                    </StatusBarItem>
+                </StatusBar>
+            </Border>
+            
+            
+            <dialog:OverlayHolder Grid.Row="1" Grid.RowSpan="2"/>
+
+            <Label HorizontalAlignment="Stretch" Width="Auto" Background="{StaticResource ForegroundColor}">
+                <Label.Effect>
+                    <DropShadowEffect Color="Black"  ShadowDepth="0" BlurRadius="10" Opacity="0.3" RenderingBias="Quality"/>
+                </Label.Effect>
+            </Label>
+            
+            <Label MouseDown="OnHandleClick"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,0,0.333,0" UseLayoutRounding="True" SnapsToDevicePixels="True">
+                <Button Width="40" Height="30" Content="&#xf145;" Click="OnMinimizeButtonClick" Style="{StaticResource TransparentButtonStyle}"  FontFamily="{StaticResource SymbolFont}" />
+                <Button x:Name="B_maximize" Width="40" Height="30" Content="&#xeb79;" Click="OnMaximizeButtonClick" Style="{StaticResource TransparentButtonStyle}" FontSize="12" FontFamily="{StaticResource SymbolFont}"/>
+                <Button Width="40" Height="30" Content="&#xeb93;" Click="OnCloseButtonClick" Style="{StaticResource TransparentButtonStyle}" FontFamily="{StaticResource SymbolFont}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Stretch" UseLayoutRounding="True" SnapsToDevicePixels="True">
+                <Button Width="40" Height="Auto" Content="&#xea5e;" Style="{StaticResource TransparentButtonStyle}" FontFamily="{StaticResource SymbolFont}" Command="{Binding clearAllCommand, Source={StaticResource VM}}"/>
+                <Button Width="40" Height="Auto" Content="&#xeccb;" Style="{StaticResource TransparentButtonStyle}" FontFamily="{StaticResource SymbolFont}" Command="{Binding clearAllCommand, Source={StaticResource VM}}"/>
+                <TextBlock Text="Dataset Analizer" FontSize="15" HorizontalAlignment="Left" Margin="8,0,0,0" VerticalAlignment="Center" Foreground="{StaticResource TextDarkColor}" IsHitTestVisible="False" FontWeight="Medium"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
