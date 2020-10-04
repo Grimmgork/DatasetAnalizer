@@ -41,9 +41,9 @@
             <ContentPresenter Grid.Row="1" Content="{Binding MainContent, Source={StaticResource VM}}"/>
 
             <Border Grid.Row="2" Background="{StaticResource ForegroundColor}">
-                <StatusBar Background="{StaticResource ForegroundColor}">
+                <StatusBar Background="{StaticResource ForegroundColor}" Padding="2">
                     <StatusBarItem>
-                        <TextBlock Text="Hello there!" VerticalAlignment="Center" FontSize="11" Margin="8,0,0,0" FontWeight="Medium"  Foreground="{StaticResource PrimaryColor}"/>
+                        <TextBlock Text="Hello there!" VerticalAlignment="Center" FontSize="11" FontWeight="Medium"  Foreground="{StaticResource PrimaryColor}"/>
                     </StatusBarItem>
                 </StatusBar>
             </Border>
@@ -60,14 +60,14 @@
             <Label MouseDown="OnHandleClick"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,0,0.333,0" UseLayoutRounding="True" SnapsToDevicePixels="True">
-                <Button Width="40" Height="30" Content="&#xf145;" Click="OnMinimizeButtonClick" Style="{StaticResource TransparentButtonStyle}"  FontFamily="{StaticResource SymbolFont}" />
-                <Button x:Name="B_maximize" Width="40" Height="30" Content="&#xeb79;" Click="OnMaximizeButtonClick" Style="{StaticResource TransparentButtonStyle}" FontSize="12" FontFamily="{StaticResource SymbolFont}"/>
-                <Button Width="40" Height="30" Content="&#xeb93;" Click="OnCloseButtonClick" Style="{StaticResource TransparentButtonStyle}" FontFamily="{StaticResource SymbolFont}"/>
+                <Button Width="40" Content="&#xf145;" Click="OnMinimizeButtonClick" Style="{StaticResource TransparentButtonStyle}"  FontFamily="{StaticResource SymbolFont}" />
+                <Button x:Name="B_maximize" Width="40"  Content="&#xeb79;" Click="OnMaximizeButtonClick" Style="{StaticResource TransparentButtonStyle}" FontSize="12" FontFamily="{StaticResource SymbolFont}"/>
+                <Button Width="40"  Content="&#xeb93;" Click="OnCloseButtonClick" Style="{StaticResource TransparentButtonStyle}" FontFamily="{StaticResource SymbolFont}"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Stretch" UseLayoutRounding="True" SnapsToDevicePixels="True">
-                <Button Width="40" Height="Auto" Content="&#xea5e;" Style="{StaticResource TransparentButtonStyle}" FontFamily="{StaticResource SymbolFont}" Command="{Binding clearAllCommand, Source={StaticResource VM}}"/>
-                <Button Width="40" Height="Auto" Content="&#xeccb;" Style="{StaticResource TransparentButtonStyle}" FontFamily="{StaticResource SymbolFont}" Command="{Binding clearAllCommand, Source={StaticResource VM}}"/>
+                <Button Width="40" Content="&#xea5e;" Style="{StaticResource TransparentButtonStyle}" FontFamily="{StaticResource SymbolFont}" Command="{Binding clearAllCommand, Source={StaticResource VM}}"/>
+                <Button Width="40" Content="&#xeccb;" Style="{StaticResource TransparentButtonStyle}" FontFamily="{StaticResource SymbolFont}" Command="{Binding clearAllCommand, Source={StaticResource VM}}"/>
                 <TextBlock Text="Dataset Analizer" FontSize="15" HorizontalAlignment="Left" Margin="8,0,0,0" VerticalAlignment="Center" Foreground="{StaticResource TextDarkColor}" IsHitTestVisible="False" FontWeight="Medium"/>
             </StackPanel>
         </Grid>

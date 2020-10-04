@@ -31,7 +31,7 @@
                     </Grid.ColumnDefinitions>
 
                     <Button Content="&#xed49;" Style="{StaticResource TransparentButtonStyle}" FontFamily="{StaticResource SymbolFont}" Height="32" Width="32" FontSize="18" Command="{Binding openFileCommand}"/>
-                    <TextBlock Grid.Column="1" Margin="16,0,0,0" Text="Filename.hgf" VerticalAlignment="Center" TextAlignment="Left" HorizontalAlignment="Stretch" Foreground="{StaticResource PrimaryColor}" FontSize="14"/>
+                    <TextBlock Grid.Column="1" Margin="16,0,16,0" Text="Filename.hgf" VerticalAlignment="Center" TextAlignment="Right" HorizontalAlignment="Left" Foreground="{StaticResource PrimaryColor}" FontSize="14"/>
                 </Grid>
             </Border>
 
@@ -46,23 +46,23 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
-                        <ColumnDefinition Width="5"/>
-                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="header length" Foreground="{StaticResource TextNormalColor}" FontSize="14" VerticalAlignment="Center"/>
-                    <TextBox HorizontalAlignment="Right" Width="101" Cursor="IBeam"/>
-
-                    <Button Style="{StaticResource TransparentButtonStyle}" Grid.Column="2" Content="view"/>
+                    <controls:NumericInput x:Name="kek" Grid.Column="1" HorizontalAlignment="Right" Width="100"/>
+                    <TextBlock Text="header cutoff" VerticalAlignment="Center" FontSize="13" Foreground="{StaticResource TextNormalColor}"/>
                 </Grid>
 
-                <Grid Margin="8">
+                <Border Height="8"/>
+
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <controls:NumericInput x:Name="kek" Grid.Column="1" HorizontalAlignment="Right" Width="100"/>
+                    <controls:NumericInput Grid.Column="1" HorizontalAlignment="Right" Width="100"/>
+                    <TextBlock Text="footer cutoff" VerticalAlignment="Center" FontSize="13" Foreground="{StaticResource TextNormalColor}"/>
                 </Grid>
             </StackPanel>
             
