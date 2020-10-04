@@ -353,7 +353,7 @@
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
         <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
         <Setter Property="MinWidth" Value="120"/>
-        <Setter Property="MinHeight" Value="25"/>
+        <Setter Property="MinHeight" Value="24"/>
         <Setter Property="FontSize" Value="13"/>
         <Setter Property="Foreground" Value="{StaticResource TextLightColor}"/>
         <Setter Property="Template">
@@ -590,11 +590,11 @@
     <ControlTemplate x:Key="VerticalScrollBar" TargetType="{x:Type ScrollBar}">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition MaxHeight="15" />
+                <RowDefinition MaxHeight="16" />
                 <RowDefinition Height="1"/>
                 <RowDefinition Height="0.00001*" />
                 <RowDefinition Height="1"/>
-                <RowDefinition MaxHeight="15" />
+                <RowDefinition MaxHeight="16" />
             </Grid.RowDefinitions>
 
             <Border Grid.RowSpan="5" Background="Yellow"/>
@@ -624,16 +624,16 @@
     <ControlTemplate x:Key="HorizontalScrollBar" TargetType="{x:Type ScrollBar}">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition MaxWidth="15" />
+                <ColumnDefinition MaxWidth="16" />
                 <ColumnDefinition Width="1"/>
                 <ColumnDefinition Width="0.00001*" />
                 <ColumnDefinition Width="1"/>
-                <ColumnDefinition MaxWidth="15" />
+                <ColumnDefinition MaxWidth="16" />
             </Grid.ColumnDefinitions>
 
             <Border Grid.ColumnSpan="5" Background="Yellow"/>
 
-            <RepeatButton Style="{StaticResource ScrollBarLineButton}" Width="15" Command="ScrollBar.LineLeftCommand" Content="&#xea61;" />
+            <RepeatButton Style="{StaticResource ScrollBarLineButton}" Command="ScrollBar.LineLeftCommand" Content="&#xea61;" />
             <Rectangle Grid.Column="1" Fill="{StaticResource HighlightColor}"/>
 
             <Track x:Name="PART_Track" Grid.Column="2" IsDirectionReversed="False">
@@ -649,7 +649,7 @@
             </Track>
 
             <Rectangle Grid.Column="3" Fill="{StaticResource HighlightColor}"/>
-            <RepeatButton Grid.Column="4" Style="{StaticResource ScrollBarLineButton}" Width="15" Command="ScrollBar.LineRightCommand" Content="&#xea6b;" />
+            <RepeatButton Grid.Column="4" Style="{StaticResource ScrollBarLineButton}" Command="ScrollBar.LineRightCommand" Content="&#xea6b;" />
         </Grid>
     </ControlTemplate>
 
@@ -660,12 +660,12 @@
         <Style.Triggers>
             <Trigger Property="Orientation" Value="Horizontal">
                 <Setter Property="Width" Value="Auto" />
-                <Setter Property="Height" Value="15" />
+                <Setter Property="Height" Value="16" />
                 <Setter Property="Template" Value="{StaticResource HorizontalScrollBar}" />
             </Trigger>
 
             <Trigger Property="Orientation" Value="Vertical">
-                <Setter Property="Width" Value="15" />
+                <Setter Property="Width" Value="16" />
                 <Setter Property="Height" Value="Auto" />
                 <Setter Property="Template" Value="{StaticResource VerticalScrollBar}" />
             </Trigger>

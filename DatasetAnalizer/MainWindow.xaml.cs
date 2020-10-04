@@ -31,8 +31,6 @@ namespace DatasetAnalizer
             ConsoleManager.Show();
 
             this.PreviewMouseDown += window_MouseDown;
-
-            MessageBox.Show("kek");
         }
 
         void OnCloseButtonClick(object sender, RoutedEventArgs e)

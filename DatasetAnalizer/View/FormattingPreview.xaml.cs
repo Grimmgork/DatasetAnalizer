@@ -85,6 +85,9 @@ namespace DatasetAnalizer.View
             CANV.DataContext = this;
         }
 
+
+
+
         public void SetProcessing(bool value)
         {
             if(value)

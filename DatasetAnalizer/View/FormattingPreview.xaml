@@ -91,6 +91,16 @@
             <Canvas x:Name="CANV" IsHitTestVisible="False" ClipToBounds="True" Margin="0,0,15,15">
                 <Rectangle x:Name="letterHighlight" Fill="Gray" Opacity="0.3" Width="{Binding letterWidth}" Height="{Binding letterHeight}" Visibility="Hidden"/>
             </Canvas>
+
+            <StatusBar Background="{StaticResource ForegroundColor}" Grid.Row="1" Height="24" Padding="2">
+                <StatusBarItem>
+                    <TextBlock Text="Row 10" VerticalAlignment="Center" FontSize="11" FontWeight="Medium"  Foreground="{StaticResource TextDarkColor}"/>
+                </StatusBarItem>
+                <Separator Width="2" HorizontalAlignment="Left"/>
+                <StatusBarItem>
+                    <TextBlock Text="Letter 20" VerticalAlignment="Center" FontSize="11" FontWeight="Medium"  Foreground="{StaticResource TextDarkColor}"/>
+                </StatusBarItem>
+            </StatusBar>
         </Grid>
 
 
