@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Eric\\Source\\Repos\\DatasetAnalizer\\DatasetAnalizer\\DatasetAnalizer.csproj": {}
+    "C:\\Users\\Eric\\source\\repos\\DatasetAnalizer\\DatasetAnalizer\\DatasetAnalizer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Eric\\Source\\Repos\\DatasetAnalizer\\DatasetAnalizer\\DatasetAnalizer.csproj": {
+    "C:\\Users\\Eric\\source\\repos\\DatasetAnalizer\\DatasetAnalizer\\DatasetAnalizer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eric\\Source\\Repos\\DatasetAnalizer\\DatasetAnalizer\\DatasetAnalizer.csproj",
+        "projectUniqueName": "C:\\Users\\Eric\\source\\repos\\DatasetAnalizer\\DatasetAnalizer\\DatasetAnalizer.csproj",
         "projectName": "DatasetAnalizer",
-        "projectPath": "C:\\Users\\Eric\\Source\\Repos\\DatasetAnalizer\\DatasetAnalizer\\DatasetAnalizer.csproj",
+        "projectPath": "C:\\Users\\Eric\\source\\repos\\DatasetAnalizer\\DatasetAnalizer\\DatasetAnalizer.csproj",
         "packagesPath": "C:\\Users\\Eric\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eric\\Source\\Repos\\DatasetAnalizer\\DatasetAnalizer\\obj\\",
+        "outputPath": "C:\\Users\\Eric\\source\\repos\\DatasetAnalizer\\DatasetAnalizer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Eric\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UQkN4kKvr3nlrveiSiPfh27D3YY4mLO3acxELRxDZZgv26e06aURYRSHt9wDLEYx3euPL9c85lS4G0DR9098qA==",
+  "dgSpecHash": "2NkIeDQjJQLBWYD49lywbv/e/yQDw1/adEDdzNyPTlsYwZmiCWT8cGI6Eb8PokbmZrWK1cnEA8LBXe1r4SMTSw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Eric\\Source\\Repos\\DatasetAnalizer\\DatasetAnalizer\\DatasetAnalizer.csproj",
+  "projectFilePath": "C:\\Users\\Eric\\source\\repos\\DatasetAnalizer\\DatasetAnalizer\\DatasetAnalizer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Eric\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Eric\\.nuget\\packages\\system.data.datasetextensions\\4.5.0\\system.data.datasetextensions.4.5.0.nupkg.sha512",
