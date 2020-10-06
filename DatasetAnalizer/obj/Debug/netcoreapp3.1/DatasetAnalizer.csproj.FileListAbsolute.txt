@@ -28,3 +28,5 @@ C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3
 C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\DatasetAnalizer.csproj.GenerateResource.cache
 C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\Themes\Generic.baml
 C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\DatasetAnalizer.csprojAssemblyReference.cache
+C:\Users\Eric\Source\Repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\DatasetAnalizer.csproj.CoreCompileInputs.cache
+C:\Users\Eric\Source\Repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\DatasetAnalizer.genruntimeconfig.cache
