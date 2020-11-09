@@ -16,7 +16,6 @@ namespace DatasetAnalizer.Controls
 {
     public class NumericInput : Control
     {
-
         public static readonly DependencyProperty OnlyFullNumbersProperty =
         DependencyProperty.Register("OnlyFullNumbers", typeof(bool), typeof(NumericInput), new UIPropertyMetadata(null));
         public bool OnlyFullNumbers

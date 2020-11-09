@@ -25,17 +25,23 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="24"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <ContentPresenter x:Name="CP" Grid.Row="1" MinHeight="24"/>
+            <ContentPresenter x:Name="CP" Grid.Row="1" Grid.RowSpan="2" MinHeight="24"/>
 
-            <Border Background="{StaticResource ForegroundColor}" MinWidth="100">
-                <Border.Effect>
-                    <DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="10" Opacity="0.3" RenderingBias="Quality"/>
-                </Border.Effect>
-            </Border>
-            
+            <Rectangle Grid.Row="1" Opacity="0.2" Height="8">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="Black" Offset="0" />
+                        <GradientStop Color="#00000000" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <Border Background="{StaticResource ForegroundColor}" MinWidth="100"/>
+
             <TextBlock Text="{Binding Title}" VerticalAlignment="Center" Foreground="{StaticResource TextDarkColor}" FontWeight="Medium" Margin="8,0,0,0"/>
             <Button Style="{StaticResource TransparentButtonStyle}" HorizontalAlignment="Right" Width="24" Content="&#xeb93;" FontFamily="{StaticResource SymbolFont}" Command="{Binding close}"/>
         </Grid>
