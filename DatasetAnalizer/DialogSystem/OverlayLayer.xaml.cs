@@ -23,7 +23,6 @@ namespace DatasetAnalizer.DialogSystem
         public OverlayLayer(OverlayViewModelBase viewModel)
         {
             InitializeComponent();
-            CP.Content = viewModel;
             this.DataContext = viewModel;
         }
     }

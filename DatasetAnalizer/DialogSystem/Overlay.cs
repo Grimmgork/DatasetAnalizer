@@ -26,7 +26,7 @@ namespace DatasetAnalizer.DialogSystem
             overlayHolder.AddOverlay(overlayView);
         }
 
-        public static void Close(OverlayViewModelBase overlayView)
+        public static void Hide(OverlayViewModelBase overlayView)
         {
             overlayHolder.CloseOverlay(overlayView);
         }

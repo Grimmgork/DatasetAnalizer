@@ -51,7 +51,7 @@
 
             <ContentPresenter Grid.Row="1" Grid.RowSpan="2" Content="{Binding MainContent, Source={StaticResource VM}}"/>
 
-            <Rectangle Grid.Row="1" Opacity="0.2" Height="8">
+            <Rectangle Grid.Row="1" Opacity="0.15" Height="8">
                 <Rectangle.Fill>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                         <GradientStop Color="Black" Offset="0" />
@@ -81,10 +81,13 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Stretch" UseLayoutRounding="True" SnapsToDevicePixels="True">
-                <Button Width="40" Content="&#xea5e;" Style="{StaticResource TransparentButtonStyle}" FontFamily="{StaticResource SymbolFont}" Command="{Binding clearAllCommand, Source={StaticResource VM}}"/>
+
+                
                 <Button Width="40" Content="&#xeccb;" Style="{StaticResource TransparentButtonStyle}" FontFamily="{StaticResource SymbolFont}" Command="{Binding clearAllCommand, Source={StaticResource VM}}"/>
-                <TextBlock Text="Dataset Analizer" HorizontalAlignment="Left" Margin="8,0,0,0" VerticalAlignment="Center" Foreground="{StaticResource TextDarkColor}" IsHitTestVisible="False" FontWeight="Medium"/>
+               
             </StackPanel>
+
+            <TextBlock Text="CSV" HorizontalAlignment="Center" FontSize="15" Margin="8,0,0,0" VerticalAlignment="Center" Foreground="{StaticResource TextDarkColor}" IsHitTestVisible="False" FontWeight="Medium"/>
         </Grid>
     </Border>
 </Window>

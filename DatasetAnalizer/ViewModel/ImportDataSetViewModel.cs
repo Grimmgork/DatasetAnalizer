@@ -56,6 +56,8 @@ namespace DatasetAnalizer.ViewModel
             openFileCommand = new OpenFileCommand(this);
 
             Title = "Import CSV dataset";
+
+            Visuals = new ImportDataset();
         }
 
         public string OpenFile()
@@ -87,7 +89,7 @@ namespace DatasetAnalizer.ViewModel
             }
             public void Execute(object parameter)
             {
-                vm.Close();
+                vm.Hide();
             }
         }
 

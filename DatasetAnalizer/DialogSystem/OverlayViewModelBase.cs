@@ -28,6 +28,20 @@ namespace DatasetAnalizer.DialogSystem
             }
         }
 
+        UIElement _visuals;
+        public UIElement Visuals
+        {
+            get
+            {
+                return _visuals;
+            }
+            internal set
+            {
+                _visuals = value;
+                OnPropertyChanged("Visuals");
+            }
+        }
+
         public OverlayViewModelBase()
         {
             close = new CloseCommand(this);
@@ -38,9 +52,9 @@ namespace DatasetAnalizer.DialogSystem
             Overlay.Add(this);
         }
 
-        public void Close()
+        public void Hide()
         {
-            Overlay.Close(this);
+            Overlay.Hide(this);
         }
 
         class CloseCommand : ICommand
@@ -60,7 +74,7 @@ namespace DatasetAnalizer.DialogSystem
 
             public void Execute(object parameter)
             {
-                vm.Close();
+                vm.Hide();
             }
         }
     }
