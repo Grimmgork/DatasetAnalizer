@@ -32,7 +32,7 @@ namespace DatasetAnalizer.ViewModel
         public ICommand ImportCommand { get; private set; }
         public ICommand openFileCommand { get; private set; }
 
-        public TextfileImport importer;
+        public CSVImport importer;
 
         RowPreviewContainer[] _rows;
         public RowPreviewContainer[] Rows 
@@ -115,13 +115,13 @@ namespace DatasetAnalizer.ViewModel
                 if (path == null)
                     return;
 
-                TextfileImport.Parameters p = new TextfileImport.Parameters();
+                CSVImport.Parameters p = new CSVImport.Parameters();
                 p.skipFirstRows = 13;
                 p.skipLastRows = 3;
                 p.columnCount = 9;
                 p.dataSeperator = new byte[1] { 9 };
 
-                vm.importer = new TextfileImport(path);
+                vm.importer = new CSVImport(path);
 
                 vm.importer.ApplyParameters(p);
                 vm.OnPropertyChanged("Rows");

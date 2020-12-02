@@ -68,8 +68,8 @@
                 </StatusBar>
             </Border>
 
-            <dialog:OverlayHolder Grid.Row="1" Grid.RowSpan="3"/>
-
+            <dialog:OverlayHolder Grid.Row="1" Grid.RowSpan="4"/>
+     
             <Label HorizontalAlignment="Stretch" Width="Auto" Background="{StaticResource ForegroundColor}"/>
 
             <Label MouseDown="OnHandleClick"/>
@@ -87,7 +87,9 @@
                
             </StackPanel>
 
-            <TextBlock Text="CSV" HorizontalAlignment="Center" FontSize="15" Margin="8,0,0,0" VerticalAlignment="Center" Foreground="{StaticResource TextDarkColor}" IsHitTestVisible="False" FontWeight="Medium"/>
+            <TextBlock Text="csv" HorizontalAlignment="Center" FontSize="15" Margin="8,0,0,0" VerticalAlignment="Center" Foreground="{StaticResource TextDarkColor}" IsHitTestVisible="False" FontWeight="Medium"/>
+
+            
         </Grid>
     </Border>
 </Window>

@@ -262,7 +262,7 @@ namespace DatasetAnalizer.View
                     c = '\u2591';
                 else
                 if (c == 32)
-                    c = '\u02FE';
+                    c = '\u00B7';
 
                 ushort glyphIndex = TextRowParent.glyphTypeface.CharacterToGlyphMap[c];
                 holders[map.GetColorAt(j)].AddLetter(glyphIndex, j);

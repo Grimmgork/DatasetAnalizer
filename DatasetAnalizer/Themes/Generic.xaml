@@ -599,7 +599,7 @@
                 <RowDefinition MaxHeight="16" />
             </Grid.RowDefinitions>
 
-            <Border Grid.RowSpan="5" Background="Yellow"/>
+            <Border Grid.RowSpan="5" Background="{StaticResource ForegroundColor}"/>
 
             <RepeatButton Style="{StaticResource ScrollBarLineButton}" Command="ScrollBar.LineUpCommand" Content="&#xea75;" />
             <Rectangle Grid.Row="1" Fill="{StaticResource HighlightColor}"/>
@@ -633,7 +633,7 @@
                 <ColumnDefinition MaxWidth="16" />
             </Grid.ColumnDefinitions>
 
-            <Border Grid.ColumnSpan="5" Background="Yellow"/>
+            <Border Grid.ColumnSpan="5" Background="{StaticResource ForegroundColor}"/>
 
             <RepeatButton Style="{StaticResource ScrollBarLineButton}" Command="ScrollBar.LineLeftCommand" Content="&#xea61;" />
             <Rectangle Grid.Column="1" Fill="{StaticResource HighlightColor}"/>
