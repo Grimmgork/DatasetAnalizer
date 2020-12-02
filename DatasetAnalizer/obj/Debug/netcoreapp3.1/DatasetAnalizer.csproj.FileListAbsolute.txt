@@ -3,7 +3,6 @@ C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3
 C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\DialogSystem\OverlayLayer.g.cs
 C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\MainWindow.g.cs
 C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\View\ChooseOperation.g.cs
-C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\View\FormattingPreview.g.cs
 C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\View\ImportDataset.g.cs
 C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\App.g.cs
 C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
@@ -12,7 +11,6 @@ C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3
 C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\App.baml
 C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\DialogSystem\OverlayLayer.baml
 C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\View\ChooseOperation.baml
-C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\View\FormattingPreview.baml
 C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\View\ImportDataset.baml
 C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\DatasetAnalizer.dll
 C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\DatasetAnalizer.pdb
@@ -27,4 +25,3 @@ C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3
 C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\DatasetAnalizer.Properties.Resources.resources
 C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\DatasetAnalizer.csproj.GenerateResource.cache
 C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\Themes\Generic.baml
-C:\Users\Eric\source\repos\DatasetAnalizer\DatasetAnalizer\obj\Debug\netcoreapp3.1\DatasetAnalizer.csprojAssemblyReference.cache

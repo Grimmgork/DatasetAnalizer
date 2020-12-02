@@ -35,7 +35,7 @@
                 </Grid>
             </Border>
 
-            <local:FormattingPreview x:Name="FP" Rows="{Binding Rows}" Grid.Row="1"/>
+            <controls:CSVPreview Grid.Row="1" Data="{Binding Preview}"/>
         </Grid>
 
 

@@ -29,27 +29,37 @@ namespace DatasetAnalizer.ViewModel
             }
         }
 
-        public ICommand ImportCommand { get; private set; }
-        public ICommand openFileCommand { get; private set; }
-
-        public CSVImport importer;
-
-        RowPreviewContainer[] _rows;
-        public RowPreviewContainer[] Rows 
+        CSVImport _importer;
+        public CSVImport Importer
         {
             get
             {
-                if (importer == null)
-                    return null;
-                return importer.preview;
+                return _importer;
             }
             set
             {
-                _rows = value;
-                OnPropertyChanged("Rows");
+                _importer = value;
+                OnPropertyChanged("Importer");
+                OnPropertyChanged("Preview");
             }
         }
 
+        public CSVImport.PreviewData Preview
+        {
+            get
+            {
+                //Console.WriteLine("kek");
+                if(Importer.IsDatasetReady && Importer != null)
+                    return Importer.previewData;
+                return null;
+            }
+        }
+
+
+        public ICommand ImportCommand { get; internal set; }
+        public ICommand openFileCommand { get; internal set; }
+
+        
         public ImportDataSetViewModel()
         {
             ImportCommand = new ImportDataSetCommand(this);
@@ -121,10 +131,8 @@ namespace DatasetAnalizer.ViewModel
                 p.columnCount = 9;
                 p.dataSeperator = new byte[1] { 9 };
 
-                vm.importer = new CSVImport(path);
-
-                vm.importer.ApplyParameters(p);
-                vm.OnPropertyChanged("Rows");
+                vm.Importer = new CSVImport(path);
+                vm.Importer.ApplyParameters(p);
             }
         }
     }

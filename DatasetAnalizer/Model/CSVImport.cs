@@ -8,6 +8,7 @@ using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using System.Windows;
 
 namespace DatasetAnalizer.Model
 {
@@ -32,10 +33,12 @@ namespace DatasetAnalizer.Model
 
             bool inRow = true;
             int rowStartIndex = 0;
+            long byteIndex = 0;
             
             while (d != -1)
             {
-                rawData[stream.Position] = (byte)d;
+                rawData[byteIndex] = (byte)d;
+
                 if (d == 13 || d == 10)
                 {
                     if (inRow)
@@ -55,6 +58,7 @@ namespace DatasetAnalizer.Model
                 }
 
                 d = stream.ReadByte();
+                byteIndex = stream.Position - 1;
             }
 
             if(inRow)
@@ -115,63 +119,21 @@ namespace DatasetAnalizer.Model
             public bool ApplyParameters(Parameters p)
             {
                 columnCount = p.columnCount;
-                ushort[] seperationCharIndexes = new ushort[p.columnCount - 1];
+                List<ushort> seperationCharIndexes = new List<ushort>();
 
-                for (int rowIndex = 0; rowIndex < rows.Length; rowIndex++)
+                for (int rowIndex = p.skipFirstRows-1; rowIndex < rows.Length-p.skipLastRows; rowIndex++)
                 {
-                    if (rowIndex < p.skipFirstRows)
+                    Row row = rows[rowIndex];
+                    for(ushort i = (ushort) row.startIndex; i <= row.endIndex; i++)
                     {
-                        rows[rowIndex]
-                        continue;
-                    }
-
-                    if (rowIndex >= preview.Length - p.skipLastRows)
-                    {
-                        preview[rowIndex].SetAsText();
-                        continue;
-                    }
-
-                    dataElementBuffer.Clear();
-
-                    string[] objectData = new string[p.columnCount];
-                    seperationCharIndexes = new ushort[p.columnCount - 1];
-
-                    int dataElementIndex = 0;
-
-                    string rowData = preview[rowIndex].RowData;
-
-                    for (ushort indexInLine = 0; indexInLine < rowData.Length; indexInLine++)
-                    {
-                        char cb = rowData[indexInLine];
-
-                        if (cb == p.dataSeperator[0])
+                        if(rawText[i] == p.dataSeperator[0])
                         {
-                            if (dataElementIndex >= seperationCharIndexes.Length)
-                            {
-                                complication = new Complication.TooMuchData();
-                                break;
-                            }
-
-                            //add the buffer as an element to Object
-                            objectData[dataElementIndex] = dataElementBuffer.ToString();
-
-                            seperationCharIndexes[dataElementIndex] = (ushort)(indexInLine + 1);
-
-                            dataElementIndex++;
-                            dataElementBuffer.Clear();
-
-                            continue;
+                            seperationCharIndexes.Add(i);
                         }
-
-                        dataElementBuffer.Append(cb);
                     }
 
-                    if (dataElementIndex < p.columnCount - 1)
-                    {
-                        complication = new Complication.TooFewData();
-                    }
-
-                    preview[rowIndex].SetAsObject(objectData, seperationCharIndexes, complication);
+                    row.columnStartIndexes = seperationCharIndexes.ToArray();
+                    seperationCharIndexes.Clear();
                 }
 
                 parameters = p;
@@ -185,7 +147,7 @@ namespace DatasetAnalizer.Model
                 public int endIndex { get; internal set; }
 
                 public Complication comp { get; internal set; }
-                public int[] columnStartIndexes { get; internal set; }
+                public ushort[] columnStartIndexes { get; internal set; }
 
                 public Row(int index, int startIndex, int endIndex)
                 {

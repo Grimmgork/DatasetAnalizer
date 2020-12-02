@@ -179,6 +179,10 @@
         </Setter>
     </Style>
 
+    <Style TargetType="{x:Type Controls:CSVPreview}">
+        
+    </Style>
+
     <Style TargetType="GroupBox">
         <Setter Property="Template">
             <Setter.Value>
