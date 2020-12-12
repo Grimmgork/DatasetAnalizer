@@ -9,14 +9,23 @@
       "DatasetAnalizer/1.0.0": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
-          "System.Data.DataSetExtensions": "4.5.0"
+          "System.Data.DataSetExtensions": "4.5.0",
+          "FicusControlLibrary": "1.0.0.0"
         },
         "runtime": {
           "DatasetAnalizer.dll": {}
         }
       },
       "Microsoft.CSharp/4.7.0": {},
-      "System.Data.DataSetExtensions/4.5.0": {}
+      "System.Data.DataSetExtensions/4.5.0": {},
+      "FicusControlLibrary/1.0.0.0": {
+        "runtime": {
+          "FicusControlLibrary.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
     }
   },
   "libraries": {
@@ -38,6 +47,11 @@
       "sha512": "sha512-221clPs1445HkTBZPL+K9sDBdJRB8UN8rgjO3ztB0CQ26z//fmJXtlsr6whGatscsKGBrhJl5bwJuKSA8mwFOw==",
       "path": "system.data.datasetextensions/4.5.0",
       "hashPath": "system.data.datasetextensions.4.5.0.nupkg.sha512"
+    },
+    "FicusControlLibrary/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

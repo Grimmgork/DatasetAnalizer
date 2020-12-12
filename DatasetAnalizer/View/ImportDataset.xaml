@@ -5,10 +5,12 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DatasetAnalizer.View"
       xmlns:controls ="clr-namespace:DatasetAnalizer.Controls"
+      xmlns:ficus="clr-namespace:FicusControlLibrary.Controls;assembly=FicusControlLibrary"
+      xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
              
       mc:Ignorable="d" 
              
-      Width="1000" Height="600"
+      VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MinWidth="1000" MinHeight="600"
       >
     
     <Grid Background="{StaticResource BackgroundColor}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -31,7 +33,7 @@
                     </Grid.ColumnDefinitions>
 
                     <Button Content="&#xed49;" Style="{StaticResource TransparentButtonStyle}" FontFamily="{StaticResource SymbolFont}" Height="32" Width="32" FontSize="18" Command="{Binding openFileCommand}"/>
-                    <TextBlock Grid.Column="1" Margin="16,0,16,0" Text="Filename.hgf" VerticalAlignment="Center" TextAlignment="Right" HorizontalAlignment="Left" Foreground="{StaticResource PrimaryColor}" FontSize="14"/>
+                    <TextBlock Grid.Column="1" Margin="16,0,16,0" Text="{Binding FileName}" VerticalAlignment="Center" TextAlignment="Right" HorizontalAlignment="Left" Foreground="{StaticResource PrimaryColor}" FontSize="14"/>
                 </Grid>
             </Border>
 
@@ -49,7 +51,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <controls:NumericInput x:Name="kek" Grid.Column="1" HorizontalAlignment="Right" Width="100"/>
+                    <ficus:NumericInput x:Name="kek" Grid.Column="1" HorizontalAlignment="Right" Width="100"/>
                     <TextBlock Text="header cutoff" VerticalAlignment="Center" FontSize="13" Foreground="{StaticResource TextNormalColor}"/>
                 </Grid>
 
@@ -61,7 +63,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <controls:NumericInput Grid.Column="1" HorizontalAlignment="Right" Width="100"/>
+                    <ficus:NumericInput Grid.Column="1" HorizontalAlignment="Right" Width="100"/>
                     <TextBlock Text="footer cutoff" VerticalAlignment="Center" FontSize="13" Foreground="{StaticResource TextNormalColor}"/>
                 </Grid>
             </StackPanel>
@@ -83,7 +85,6 @@
                     </Button.Style>
                 </Button>
             </StackPanel>
-
 
         </Grid>
         

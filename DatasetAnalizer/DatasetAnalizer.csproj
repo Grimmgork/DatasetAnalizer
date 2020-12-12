@@ -60,4 +60,9 @@
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="FicusControlLibrary">
+      <HintPath>..\..\FicusControlLibrary\FicusControlLibrary\bin\Debug\FicusControlLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>
