@@ -15,10 +15,12 @@
         <Setter Property="HighlightColor" Value="{StaticResource PrimaryColor}"/>
         <Setter Property="TextColor" Value="{StaticResource TextNormalColor}"/>
         <Setter Property="DarkTextColor" Value="{StaticResource TextDarkColor}"/>
+        <Setter Property="SnapsToDevicePixels" Value="false"/>
+        <Setter Property="UseLayoutRounding" Value="false"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Controls:CSVPreview}">
-                    <Grid Grid.Column="1">
+                    <Grid Grid.Column="1" Background="Transparent">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition/>
@@ -29,12 +31,28 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
-                        <ItemsControl x:Name="CSVPreview_RowHeaderItemControl" Width="40">
+                        <ItemsControl x:Name="CSVPreview_RowHeaderItemControl" Grid.ColumnSpan="2">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border Height="20">
-                                        <TextBlock Text="{Binding rowNumber}" FontFamily="Consolas" Foreground="{StaticResource TextDarkColor}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0" FontSize="13" FontWeight="Bold"/>
-                                    </Border>
+
+                                    <Grid>
+                                        <Border Height="20" HorizontalAlignment="Left">
+                                            <TextBlock Text="{Binding rowNumber}" FontFamily="Consolas" Foreground="{StaticResource TextDarkColor}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0" FontSize="13" FontWeight="Bold"/>
+                                        </Border>
+                                        <Border>
+                                            <Border.Style>
+                                                <Style>
+                                                    <Setter Property="Border.Background" Value="Transparent"/>
+                                                    <Style.Triggers>
+                                                        <Trigger Property="Border.IsMouseOver" Value="True">
+                                                            <Setter Property="Border.Background" Value="#0CFFFFFF" />
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                        </Border>
+                                    </Grid>
+                                    
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>

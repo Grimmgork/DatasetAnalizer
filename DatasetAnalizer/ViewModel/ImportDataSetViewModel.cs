@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using DatasetAnalizer.DialogSystem;
-using DatasetAnalizer.Model.CSVImport;
 
 namespace DatasetAnalizer.ViewModel
 {
@@ -32,8 +31,8 @@ namespace DatasetAnalizer.ViewModel
             }
         }
 
-        Parameters _paramteres;
-        public Parameters Parameters
+        CSVFileImport.Parameters _paramteres;
+        public CSVFileImport.Parameters Parameters
         {
             get
             {
@@ -46,8 +45,8 @@ namespace DatasetAnalizer.ViewModel
             }
         }
 
-        PreviewData _preview;
-        public PreviewData Preview
+        CSVFileImport.PreviewData _preview;
+        public CSVFileImport.PreviewData Preview
         {
             get
             {
@@ -79,7 +78,7 @@ namespace DatasetAnalizer.ViewModel
 
         public ImportDataSetViewModel()
         {
-            Parameters = new Parameters() { skipFirstRows = 13, skipLastRows = 3, columnCount = 9, dataSeperator = new byte[1] { 9 } };
+            Parameters = new CSVFileImport.Parameters() { skipFirstRows = 13, skipLastRows = 3, columnCount = 9, dataSeperator = new byte[1] { 9 } };
 
             ImportCommand = new ImportDataSetCommand(this);
             openFileCommand = new OpenFileCommand(this);

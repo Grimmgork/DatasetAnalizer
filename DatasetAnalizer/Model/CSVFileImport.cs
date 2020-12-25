@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Windows;
 
-namespace DatasetAnalizer.Model.CSVImport
+namespace DatasetAnalizer.Model
 {
     public class CSVFileImport
     {
@@ -69,12 +69,13 @@ namespace DatasetAnalizer.Model.CSVImport
             if(inRow)
                 rows.Add(new PreviewData.Row(rowIndex, rowStartIndex, (int)stream.Position));
 
+            stream.Close();
             previewData = new PreviewData(rawData, rows.ToArray());
         }
 
         public void ApplyParameters(Parameters p)
         {
-            IsDatasetReady = previewData.ApplyParameters(p);
+            IsDatasetReady = true;//--previewData.ApplyParameters(p);
         }
 
         public DataTable GetDataset()
@@ -86,109 +87,123 @@ namespace DatasetAnalizer.Model.CSVImport
 
             return data;
         }
-    }
 
-    [System.Serializable]
-    public struct Parameters
-    {
-        public int name { get; set; }
-        public ushort columnCount { get; set; }
-
-        public int headerRowIndex { get; set; }
-        public byte[] headerRowSeperator { get; set; }
-
-        public byte[] dataSeperator { get; set; }
-
-        public int skipFirstRows { get; set; }
-        public int skipLastRows { get; set; }
-    }
-
-    public class PreviewData : PropertyChangedBase
-    {
-        public Row[] rows { get; private set; }
-        public byte[] rawText { get; private set; }
-
-        public Parameters parameters { get; private set; }
-        public int dataStartRow { get; private set; }
-        public int dataEndRow { get; private set; }
-
-        public int columnCount { get; private set; }
-
-        string _debug;
-        public string Debug
+        public class PreviewData : PropertyChangedBase
         {
-            get
-            {
-                return _debug;
-            }
-            set
-            {
-                _debug = value;
-                OnPropertyChanged("Debug");
-            }
-        }
+            public Row[] rows { get; private set; }
+            public byte[] rawText { get; private set; }
 
-        public PreviewData(byte[] rawText, Row[] rows)
-        {
-            this.rows = rows;
-            this.rawText = rawText;
-            Debug = "lol";
-        }
+            public Parameters parameters { get; private set; }
+            public int dataStartRow { get; private set; }
+            public int dataEndRow { get; private set; }
 
+            public int columnCount { get; private set; }
 
-        public bool ApplyParameters(Parameters p)
-        {
-            columnCount = p.columnCount;
-            List<ushort> seperationCharIndexes = new List<ushort>();
-
-            for (int rowIndex = p.skipFirstRows - 1; rowIndex < rows.Length - p.skipLastRows; rowIndex++)
-            {
-                Row row = rows[rowIndex];
-                for (ushort i = (ushort)row.startIndex; i <= row.endIndex; i++)
-                {
-                    if (rawText[i] == p.dataSeperator[0])
-                    {
-                        seperationCharIndexes.Add(i);
-                    }
-                }
-
-                row.columnStartIndexes = seperationCharIndexes.ToArray();
-                seperationCharIndexes.Clear();
-            }
-
-            parameters = p;
-            return true;
-        }
-
-        public class Row
-        {
-            public int rowNumber
+            public int NumberOfRows
             {
                 get
                 {
-                    return index + 1;
+                    if(rows != null)
+                        return rows.Length;
+                    return 0;
                 }
             }
-            public int index { get; internal set; }
-            public int startIndex { get; internal set; }
-            public int endIndex { get; internal set; }
 
-            public Complication comp { get; internal set; }
-            public ushort[] columnStartIndexes { get; internal set; }
-
-            public Row(int index, int startIndex, int endIndex)
+            string _debug;
+            public string Debug
             {
-                this.index = index;
-                this.startIndex = startIndex;
-                this.endIndex = endIndex;
+                get
+                {
+                    return _debug;
+                }
+                set
+                {
+                    _debug = value;
+                    OnPropertyChanged("Debug");
+                }
             }
 
-            public enum Complication
+            public PreviewData(byte[] rawText, Row[] rows)
             {
-                None,
-                TooViewColumns,
-                TooMuchColumns,
+                this.rows = rows;
+                this.rawText = rawText;
+                Debug = "lol";
+            }
+
+
+            public bool ApplyParameters(Parameters p)
+            {
+                columnCount = p.columnCount;
+                List<ushort> seperationCharIndexes = new List<ushort>();
+
+                for (int rowIndex = p.skipFirstRows - 1; rowIndex < rows.Length - p.skipLastRows; rowIndex++)
+                {
+                    Row row = rows[rowIndex];
+                    for (ushort i = (ushort)row.startIndex; i <= row.endIndex; i++)
+                    {
+                        if (rawText[i] == p.dataSeperator[0])
+                        {
+                            seperationCharIndexes.Add(i);
+                        }
+                    }
+
+                    row.columnStartIndexes = seperationCharIndexes.ToArray();
+                    seperationCharIndexes.Clear();
+                }
+
+                parameters = p;
+                return true;
+            }
+
+            public class Row
+            {
+                public int rowNumber
+                {
+                    get
+                    {
+                        return index + 1;
+                    }
+                }
+                public int index { get; internal set; }
+                public int startIndex { get; internal set; }
+                public int endIndex { get; internal set; }
+
+                public Complication comp { get; internal set; }
+                public ushort[] columnStartIndexes { get; internal set; }
+
+                public Row(int index, int startIndex, int endIndex)
+                {
+                    this.index = index;
+                    this.startIndex = startIndex;
+                    this.endIndex = endIndex;
+                }
+
+                public enum Complication
+                {
+                    None,
+                    TooViewColumns,
+                    TooMuchColumns,
+                }
             }
         }
+
+        [System.Serializable]
+        public struct Parameters
+        {
+            public int name { get; set; }
+            public ushort columnCount { get; set; }
+
+            public int headerRowIndex { get; set; }
+            public byte[] headerRowSeperator { get; set; }
+
+            public byte[] dataSeperator { get; set; }
+
+            public int skipFirstRows { get; set; }
+            public int skipLastRows { get; set; }
+        }
     }
+
+
+
+
 }
